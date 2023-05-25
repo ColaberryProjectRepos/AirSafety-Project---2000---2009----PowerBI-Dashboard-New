@@ -1,0 +1,326 @@
+
+Step 5: Measures Tables
+13
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1"><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:Arial">1)<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif">In the
+home tab, select the Enter Data to create new table. <o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:Arial">2)<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Rename
+the table to Fatalities Measures. <o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:Arial">3)<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Click
+Load and enter all the DAX measures for Fatalities Table.<o:p></o:p></span></p><p class="MsoListParagraphCxSpLast" style="margin-left:.75in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:Arial">4)<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Follow
+the Gif below for step by step.<o:p></o:p></span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>DAX
+FORMULAS: Fatalities Measures<o:p></o:p></b></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Total Fatalities =
+SUM('AirplanesDataset'[Fatalities])<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+Places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Fatalities_per_Month =
+AVERAGEX(VALUES(Calendars[YearMonth]) , [Total Fatalities]) <o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Decimal with 2 places]</span><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Fatalities Per Year =
+DIVIDE([Total Fatalities],DISTINCTCOUNT('Calendars'[year]),0)+0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Fatalities YOY =
+DIVIDE('Fatalities Measures'[Total
+Fatalities],DISTINCTCOUNT('Calendars'[year]))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Fatalities YoY% (Year-to-Year)
+= AVERAGEX(VALUES('Calendars'[Date].[Year]),'Fatalities
+Measures'[YoY_VARIABLE])+0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Percentage&nbsp; &nbsp;with 2 places]</span><span style="font-size:
+12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">LY_Number = CALCULATE([Total
+Fatalities], DATEADD('Calendars'[Date],-1,YEAR))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">KPI&nbsp; ARROW&nbsp;&nbsp;
+YOY% = SWITCH(TRUE(), [Fatalities YoY% (Year-to-Year)] &lt;0,
+UNICHAR(9660),&nbsp; UNICHAR(9650))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Text &nbsp;places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">COLOR IND YOY% =
+IF([Fatalities YoY% (Year-to-Year)]&gt;=0,"RED","GREEN")<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format - Text places]</span><span style="font-size:12.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="margin-left:.5in"><b><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">DAX FORMULAS: Accidents Measures<o:p></o:p></span></b></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACC COLOR
+IND YOY% = IF([Accidents YoY%
+(Year-to-Year)]&gt;=0,"RED","GREEN")<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format - Text places]</span><span style="font-size:12.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accident
+Per Year = DIVIDE([Total Accidents],DISTINCTCOUNT('Calendars'[year]),0)+0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accident_KPI_ARROW_YOY%
+= SWITCH(TRUE(), [Accidents YoY% (Year-to-Year)] &lt;0, UNICHAR(9660),&nbsp; UNICHAR(9650))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format - Text places]</span><span style="font-size:12.0pt;line-height:
+107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accident_per_Month
+= AVERAGEX(VALUES(Calendars[YearMonth]) , [Total Accidents])<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Decimal with 2 places]</span><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accidents
+YoY% (Year-to-Year) = AVERAGEX(<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">VALUES('Calendars'[Date].[Year]),'Accident
+Measures'[YoY_Accident_Variable])+0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Percentage&nbsp; &nbsp;with 2 places]</span><span style="font-size:
+12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">LY_Accident_Number =
+CALCULATE([Total Accidents], DATEADD('Calendars'[Date],-1,YEAR))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Total Accidents =
+SUM(AirplanesDataset[Accidents])<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Whole Number &nbsp;with 0
+Places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">YoY_Accident_Variable =
+IF([LY_Accident_Number] = 0,0,DIVIDE(([Total Accidents]-
+[LY_Accident_Number]),[LY_Accident_Number])) + 0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – General&nbsp; Places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><b><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">DAX Formula: Fatalities Rate %<o:p></o:p></span></b></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Fatalities Rate % =
+DIVIDE([Total Accidents],[Total Fatalities],0)<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Percentages with 2&nbsp;
+Places]</span><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><b><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">DAX FORMULAS: Fatalities per
+Crash<o:p></o:p></span></b></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">F/C COLOR IND YOY% = IF([F/C
+YoY% (Year-to-Year)] &gt;=0,"RED","GREEN")<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Text&nbsp; Places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">F/C YoY% (Year-to-Year) = <o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;AVERAGEX(<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">VALUES('Calendars'[Date].[Year]),'Fatalities
+per&nbsp; Crash'[FC_YoY_VARIABLE])+0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Percentage&nbsp; &nbsp;with 2 places]</span><span style="font-size:
+12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">F/C_KPI_ARROW_YOY% =
+SWITCH(TRUE(),[F/C YoY% (Year-to-Year)]&nbsp;
+&lt;0, UNICHAR(9660),&nbsp;
+UNICHAR(9650))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Text &nbsp;places]</span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">Fatalities per Crash =
+DIVIDE([Total Accidents],[Total Fatalities],0)<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">FC_LY_Number =
+CALCULATE([Fatalities per Crash], DATEADD('Calendars'[Date],-1,YEAR))<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – Decimal number&nbsp;&nbsp; &nbsp;with 2 places]</span><span style="font-size:
+12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">FC_YoY_VARIABLE =
+IF([FC_LY_Number] = 0,0,DIVIDE(('Fatalities per&nbsp;
+Crash'[Fatalities per Crash]- [FC_LY_Number]),[FC_LY_Number])) + 0<o:p></o:p></span></p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif">&nbsp;</span></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="text-indent:.5in"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow">[Format – General&nbsp; Places]</span></p><p class="MsoNormal" style="text-indent:.5in"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1226/6/1.gif" style="width: 50%;"></p><p class="MsoNormal" style="text-indent:.5in"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1226/6/2.gif" style="width: 50%;"></p><p class="MsoNormal" style="text-indent:.5in"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1226/6/3.gif" style="width: 50%;"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1226/6/4.gif" style="width: 50%;"><span style="font-size:12.0pt;
+line-height:107%;font-family:&quot;Arial&quot;,sans-serif;background:yellow;mso-highlight:
+yellow"><br></span><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p></span></p>
+
+<p><a href="https://www.youtube.com/watch?v=waG_JhBgUpM" target="_blank">DAX Measures </a><br></p>
+
